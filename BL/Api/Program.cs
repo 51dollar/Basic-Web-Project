@@ -17,6 +17,7 @@ internal class Program
         {
             opt.UseSqlServer(builder.Configuration.GetConnectionString("DBConnection"));
         });
+        builder.Services.AddControllers();
 
         var app = builder.Build();
 
@@ -31,6 +32,9 @@ internal class Program
         }
 
         app.UseHttpsRedirection();
+
+        app.MapControllers();
+
         app.Run();
     }
 }
