@@ -1,3 +1,5 @@
+using Api.Data;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
 internal class Program
@@ -10,6 +12,10 @@ internal class Program
         builder.Services.AddSwaggerGen(o =>
         {
             o.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+        });
+        builder.Services.AddDbContext<ApplicationDBContext>(opt =>
+        {
+            opt.UseSqlServer(builder.Configuration.GetConnectionString("DBConnection"));
         });
 
         var app = builder.Build();
