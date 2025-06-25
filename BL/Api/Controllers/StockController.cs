@@ -2,6 +2,7 @@ using Api.Data;
 using Api.Dtos.Stock;
 using Api.Mappers;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Identity.Client;
 
 namespace Api.Controllers
 {
@@ -44,6 +45,29 @@ namespace Api.Controllers
             _dbContext.Stocks.Add(stockModel);
             _dbContext.SaveChanges();
             return CreatedAtAction(nameof(GetById), new { id = stockModel.Id }, stockModel);
+        }
+
+        [HttpPut]
+        [Route("{id}")]
+        public IActionResult Update([FromRoute] int id, [FromBody] UpdateStockRequestDto updateDto)
+        {
+            var stockModel = _dbContext.Stocks.FirstOrDefault(x => x.Id == id);
+
+            if (stockModel == null)
+            {
+                return NotFound();
+            }
+
+            stockModel.Symbol = updateDto.Symbol;
+            stockModel.CompanyName = updateDto.CompanyName;
+            stockModel.Purchase = updateDto.Purchase;
+            stockModel.LastDiv = updateDto.LastDiv;
+            stockModel.Industry = updateDto.Industry;
+            stockModel.MarketCap = updateDto.MarketCap;
+
+            _dbContext.SaveChanges();
+
+            return Ok(stockModel.ToStockDto());
         }
     }
 }
