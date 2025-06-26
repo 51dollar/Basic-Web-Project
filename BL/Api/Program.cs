@@ -22,6 +22,7 @@ internal class Program
         builder.Services.AddControllers();
 
         builder.Services.AddScoped<IStockRepository, StockRepository>();
+        builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 
         var app = builder.Build();
 
