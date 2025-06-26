@@ -10,14 +10,15 @@ namespace Api.Mappers
             return new StockDto
             {
                 Id = stockModel.Id,
-                Symbol = stockModel.CompanyName,
+                Symbol = stockModel.Symbol,
+                CompanyName = stockModel.CompanyName,
                 Purchase = stockModel.Purchase,
                 LastDiv = stockModel.LastDiv,
                 Industry = stockModel.Industry,
                 MarketCap = stockModel.MarketCap
             };
         }
-        
+
         public static Stock ToStockFromCreateDto(this CreateStockRequestDto stockDto)
         {
             return new Stock
