@@ -1,4 +1,6 @@
 using Api.Data;
+using Api.Interfaces;
+using Api.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -18,6 +20,8 @@ internal class Program
             opt.UseSqlServer(builder.Configuration.GetConnectionString("DBConnection"));
         });
         builder.Services.AddControllers();
+
+        builder.Services.AddScoped<IStockRepository, StockRepository>();
 
         var app = builder.Build();
 
