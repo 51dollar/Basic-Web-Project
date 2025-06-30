@@ -15,6 +15,12 @@ internal class Program
         {
             o.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
         });
+
+        builder.Services.AddControllers().AddNewtonsoftJson(opt =>
+        {
+            opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+        });
+
         builder.Services.AddDbContext<ApplicationDBContext>(opt =>
         {
             opt.UseSqlServer(builder.Configuration.GetConnectionString("DBConnection"));
