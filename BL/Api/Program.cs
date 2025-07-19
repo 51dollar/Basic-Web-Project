@@ -111,6 +111,14 @@ internal class Program
 
         app.UseHttpsRedirection();
 
+        app.UseCors(x => x
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials()
+            .WithOrigins("https://localhost:5000")
+            .SetIsOriginAllowed(origin => true) // Разрешает любой origin
+        );
+
         app.UseAuthentication();
         app.UseAuthorization();
 
