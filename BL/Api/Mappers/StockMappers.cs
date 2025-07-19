@@ -32,5 +32,18 @@ namespace Api.Mappers
                 MarketCap = stockDto.MarketCap
             };
         }
+
+        public static Stock ToStockFromFMP(this FMPStock fmpStock)
+        {
+            return new Stock
+            {
+                Symbol = fmpStock.Symbol,
+                CompanyName = fmpStock.CompanyName,
+                Purchase = (decimal)fmpStock.Price,
+                LastDiv = (decimal)fmpStock.LastDividend,
+                Industry = fmpStock.Industry,
+                MarketCap = fmpStock.MarketCap
+            };
+        }
     }
 }
