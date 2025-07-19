@@ -1,4 +1,5 @@
 using Api.Data;
+using Api.Helpers;
 using Api.Interfaces;
 using Api.Models;
 using Microsoft.EntityFrameworkCore;
@@ -35,11 +36,21 @@ namespace Api.Repository
             return commentModel;
         }
 
-        public async Task<List<Comment>> GetAllAsync()
+        public async Task<List<Comment>> GetAllAsync(CommentQueryObject queryObject)
         {
-            return await _dbContext.Comments
+            var comments = _dbContext.Comments
                 .Include(a => a.AppUser)
-                .ToListAsync();
+                .AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(queryObject.Symbol))
+            {
+                comments = comments.Where(s => s.Stock.Symbol == queryObject.Symbol);
+            }
+            if (queryObject.IsDescending == true)
+            {
+                comments = comments.OrderByDescending(c => c.CreatedOn);
+            }
+            return await comments.ToListAsync();
         }
 
         public async Task<Comment?> GetByIdAsync(int id)
