@@ -1,6 +1,5 @@
-import type React from "react";
+import React, { type JSX } from "react";
 import Card from "../Card/Card";
-import type { JSX } from "react";
 
 interface Props {}
 
@@ -14,4 +13,4 @@ const CardList: React.FC<Props> = (props: Props): JSX.Element => {
   );
 };
 
-export default CardList
+export default CardList;
