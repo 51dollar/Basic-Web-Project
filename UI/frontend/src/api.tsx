@@ -7,10 +7,10 @@ interface SearchResponse {
 
 export const searchCompanies = async (query: string) => {
     try {
-        const response = await axios.get<SearchResponse>(
+        const data = await axios.get<SearchResponse>(
             `https://financialmodelingprep.com/stable/search-symbol?query=${query}&apikey=${import.meta.env.VITE_API_KEY}`
         );
-        return response.data;
+        return data;
     }
     catch (error) {
         if (isAxiosError(error)) {
