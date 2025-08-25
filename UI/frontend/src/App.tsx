@@ -8,7 +8,7 @@ import {searchCompanies} from "./api.tsx";
 function App() {
   const [search, setSearch] = useState<string>("");
   const [searchResult, setSearchResult] = useState<CompanySearch[]>([]);
-  const [searchError, setSearchError] = useState<string>("");
+  const [serverError, setServerError] = useState<string>("");
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
       setSearch(e.target.value);
@@ -18,7 +18,7 @@ function App() {
   const onClick = async (e: SyntheticEvent) => {
       const result = await searchCompanies(search);
       if (typeof result === "string") {
-          setSearchError(result);
+          setServerError(result);
       }
       else if (Array.isArray(result.data)) {
           setSearchResult(result.data);
@@ -30,6 +30,7 @@ function App() {
     <>
       <div>
         <Search onClick={onClick} search={search} handleChange={handleChange} />
+          {serverError && <h1>{serverError}</h1>}
         <CardList />
       </div>
     </>
