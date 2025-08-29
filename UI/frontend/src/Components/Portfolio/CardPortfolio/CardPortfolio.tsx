@@ -1,11 +1,11 @@
 interface Props {
-    portfolioValues: string;
+    portfolioValue: string;
 }
 
-const CardPortfolio = ({portfolioValues}: Props) => {
+const CardPortfolio = ({portfolioValue}: Props) => {
     return (
         <>
-            <h4>{portfolioValues}</h4>
+            <h4>{portfolioValue}</h4>
             <button>X</button>
         </>
     );

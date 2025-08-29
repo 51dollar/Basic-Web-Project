@@ -9,8 +9,8 @@ const ListPortfolio = ({portfolioValues}: Props) => {
         <>
             <h3>My Portfolio</h3>
             <ul>
-                {portfolioValues && portfolioValues.map((portfolioValues) => {
-                    return <CardPortfolio portfolioValues={portfolioValues}/>;
+                {portfolioValues && portfolioValues.map((portfolioValue) => {
+                    return <CardPortfolio portfolioValue={portfolioValue}/>;
                 })}
             </ul>
         </>

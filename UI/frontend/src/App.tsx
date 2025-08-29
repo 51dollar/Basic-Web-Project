@@ -42,7 +42,7 @@ function App() {
                 handleSearchChange={handleSearchChange}
             />
             <ListPortfolio
-                porfolioValues={portfolioValues}
+                portfolioValues={portfolioValues}
             />
             <CardList
                 searchResult={searchResult}
