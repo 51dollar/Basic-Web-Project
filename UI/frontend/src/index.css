@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+    --breakpoint-sm: 480px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1020px;
+    --breakpoint-xl: 1440px;
+
+    --color-lightBlue: oklch(54.6% 0.245 262.881);
+    --color-darkBlue: oklch(37.9% 0.146 265.522);
+    --color-lightGreen: oklch(57.7% 0.245 27.325);
+
+    --font-sans: "Poppins", sans-serif;
+    --font-rubik: "Rubik", sans-serif;
+
+    --spacing-180: 32rem;
+}

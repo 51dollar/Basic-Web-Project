@@ -5,6 +5,8 @@ import {type ChangeEvent, type SyntheticEvent, useState} from "react";
 import type {CompanySearch} from "./company";
 import {searchCompanies} from "./api.tsx";
 import ListPortfolio from "./Components/Portfolio/ListPortfolio/ListPortfolio.tsx";
+import Hero from "./Components/Hero/Hero.tsx";
+import Navbar from "./Components/Navbar/Navbar.tsx";
 
 function App() {
     const [search, setSearch] = useState<string>("");
@@ -43,7 +45,9 @@ function App() {
     };
 
     return (
-        <div className="App">
+        <>
+            <Navbar/>
+            <Hero/>
             <Search
                 onSearchSubmit={onSearchSubmit}
                 search={search}
@@ -57,8 +61,9 @@ function App() {
                 searchResult={searchResult}
                 onPortfolioCreate={onPortfolioCreate}
             />
+
             {serverError && <div>Unable to connect to API</div>}
-        </div>
+        </>
     );
 }
 
