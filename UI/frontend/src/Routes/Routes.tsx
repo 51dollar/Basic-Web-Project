@@ -4,31 +4,36 @@ import HomePage from "../Pages/HomePage/HomePage";
 import SearchPage from "../Pages/SearchPage/SearchPage";
 import CompanyPage from "../Pages/CompanyPage/CompanyPage";
 import IncomeStatement from "../Components/IncomeStatement/IncomeStatement.tsx";
+import DesignGuide from "../Pages/DesignGuide/DesignGuide.tsx";
 
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <App/>,
+        element: <App />,
         children: [
             {
                 path: "",
-                element: <HomePage/>
+                element: <HomePage />
             },
             {
                 path: "search",
-                element: <SearchPage/>
+                element: <SearchPage />
+            },
+            {
+                path: "design-guide",
+                element: <DesignGuide />
             },
             {
                 path: "company/:ticker",
-                element: <CompanyPage/>,
+                element: <CompanyPage />,
                 children: [
                     {
                         path: "company-profile",
-                        element: <CompanyPage/>
+                        element: <CompanyPage />
                     },
                     {
                         path: "income-statement",
-                        element: <IncomeStatement/>
+                        element: <IncomeStatement />
                     },
                 ]
             },
