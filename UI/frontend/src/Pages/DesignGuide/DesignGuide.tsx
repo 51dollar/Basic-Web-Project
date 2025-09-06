@@ -1,4 +1,5 @@
 import Table from "../../Components/Table/Table.tsx";
+import RatioList from "../../Components/RatioList/RatioList.tsx";
 
 const DesignGuide = () => {
     return (
@@ -8,6 +9,7 @@ const DesignGuide = () => {
                 This is design pages guide. <br />
                 This is where we will house various design aspects of the app.
             </h2>
+            <RatioList />
             <Table />
             <h3 className="text-base mt-6">
                 Table – Table takes in a configuration object and company data as params.
