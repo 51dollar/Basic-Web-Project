@@ -28,12 +28,13 @@ const Table = () => {
     });
     const renderedHeaders = configs.map((config) => {
         return (
-            <th
-                className="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                key={config.label}
-            >
-                {config.label}
-            </th>
+            <tr key={config.label}>
+                <th
+                    className="p-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
+                    {config.label}
+                </th>
+            </tr>
         );
     });
     return (

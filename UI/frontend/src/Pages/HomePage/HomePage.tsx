@@ -1,13 +1,9 @@
 import Hero from "../../Components/Hero/Hero.tsx";
 
-interface Props {
-
-}
-
-const HomePage = (props: Props) => {
+const HomePage = () => {
     return (
         <div>
-            <Hero/>
+            <Hero />
         </div>
     );
 };

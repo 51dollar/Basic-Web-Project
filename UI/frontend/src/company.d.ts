@@ -4,37 +4,38 @@ export interface CompanySearch {
     name: string;
     stockExchange: string;
     symbol: string;
-  }
-  
-  export interface CompanyProfile {
+}
+
+export interface CompanyProfile {
     symbol: string;
     price: number;
+    marketCap: number;
     beta: number;
-    volAvg: number;
-    mktCap: number;
-    lastDiv: number;
+    lastDividend: number;
     range: string;
-    changes: number;
+    change: number;
+    changePercentage: number;
+    volume: number;
+    averageVolume: number;
     companyName: string;
     currency: string;
     cik: string;
     isin: string;
+    cusip: string;
+    exchangeFullName: string;
     exchange: string;
-    exchangeShortName: string;
     industry: string;
     website: string;
     description: string;
     ceo: string;
     sector: string;
-    counter: string;
+    country: string;
     fullTimeEmployees: string;
     phone: string;
     address: string;
     city: string;
     state: string;
     zip: string;
-    dcfDiff: number;
-    dcf: number;
     image: string;
     ipoDate: string;
     defaultImage: boolean;
@@ -42,9 +43,9 @@ export interface CompanySearch {
     isActivelyTrading: boolean;
     isAdr: boolean;
     isFund: boolean;
-  }
-  
-  export interface CompanyKeyRatios {
+}
+
+export interface CompanyKeyRatios {
     dividendYielTTM: number;
     dividendYielPercentageTTM: number;
     peRatioTTM: number;
@@ -103,9 +104,9 @@ export interface CompanySearch {
     enterpriseValueMultipleTTM: number;
     priceFairValueTTM: number;
     dividendPerShareTTM: number;
-  }
-  
-  export interface CompanyIncomeStatement {
+}
+
+export interface CompanyIncomeStatement {
     date: string;
     symbol: string;
     reportedCurrency: string;
@@ -144,9 +145,9 @@ export interface CompanySearch {
     weightedAverageShsOutDil: number;
     link: string;
     finalLink: string;
-  }
-  
-  export interface CompanyBalanceSheet {
+}
+
+export interface CompanyBalanceSheet {
     date: string;
     symbol: string;
     reportedCurrency: string;
@@ -201,9 +202,9 @@ export interface CompanySearch {
     netDebt: number;
     link: string;
     finalLink: string;
-  }
-  
-  export interface CompanyCashFlow {
+}
+
+export interface CompanyCashFlow {
     date: string;
     symbol: string;
     reportedCurrency: string;
@@ -244,4 +245,54 @@ export interface CompanySearch {
     freeCashFlow: number;
     link: string;
     finalLink: string;
-  }
+}
+
+export interface CompanyKeyMetrics {
+    symbol: string;
+    date: string;
+    fiscalYear: string;
+    period: string
+    reportedCurrency: string;
+    marketCap: number;
+    enterpriseValue: number
+    evToSales: number;
+    evToOperatingCashFlow: number
+    evToFreeCashFlow: number;
+    evToEBITDA: number;
+    netDebtToEBITDA: number;
+    currentRatio: number;
+    incomeQuality: number;
+    grahamNumber: number;
+    grahamNetNet: number;
+    taxBurden: number;
+    interestBurden: number;
+    workingCapital: number;
+    investedCapital: number;
+    returnOnAssets: number
+    operatingReturnOnAssets: number;
+    returnOnTangibleAssets: number;
+    returnOnEquity: number;
+    returnOnInvestedCapital: number;
+    returnOnCapitalEmployed: number;
+    earningsYield: number;
+    freeCashFlowYield: number;
+    capexToOperatingCashFlow: number;
+    capexToDepreciation: number;
+    capexToRevenue: number;
+    salesGeneralAndAdministrativeToRevenue: number
+    researchAndDevelopementToRevenue: number;
+    stockBasedCompensationToRevenue: number;
+    intangiblesToTotalAssets: number;
+    averageReceivables: number;
+    averagePayables: number;
+    averageInventory: number;
+    daysOfSalesOutstanding: number;
+    daysOfPayablesOutstanding: number;
+    daysOfInventoryOutstanding: number;
+    operatingCycle: number;
+    cashConversionCycle: number;
+    freeCashFlowToEquity: number;
+    freeCashFlowToFirm: number;
+    tangibleAssetValue: number;
+    netCurrentAssetValue: number;
+}

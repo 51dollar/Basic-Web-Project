@@ -1,4 +1,3 @@
-import Navbar from "../../Components/Navbar/Navbar.tsx";
 import Search from "../../Components/Search/Search.tsx";
 import ListPortfolio from "../../Components/Portfolio/ListPortfolio/ListPortfolio.tsx";
 import CardList from "../../Components/CardList/CardList.tsx";
@@ -6,11 +5,7 @@ import {type ChangeEvent, type SyntheticEvent, useState} from "react";
 import type {CompanySearch} from "../../company";
 import {searchCompanies} from "../../api.tsx";
 
-interface Props {
-
-}
-
-const SearchPage = (props: Props) => {
+const SearchPage = () => {
     const [search, setSearch] = useState<string>("");
     const [portfolioValues, setPortfolioValues] = useState<string[]>([]);
     const [searchResult, setSearchResult] = useState<CompanySearch[]>([]);

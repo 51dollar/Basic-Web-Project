@@ -2,10 +2,7 @@ import hero from "./hero.png";
 import "./Hero.css";
 import {Link} from "react-router-dom";
 
-interface Props {
-}
-
-const Hero = (props: Props) => {
+const Hero = () => {
     return (
         <section id="hero">
             <div className="container flex flex-col-reverse mx-auto p-8 lg:flex-row">
@@ -27,7 +24,10 @@ const Hero = (props: Props) => {
                     </div>
                 </div>
                 <div className="mb-24 mx-auto md:w-180 md:px-10 lg:mb-0 lg:w-1/2">
-                    <img src={hero} alt=""/>
+                    <img
+                        src={hero}
+                        alt=""
+                    />
                 </div>
             </div>
         </section>
