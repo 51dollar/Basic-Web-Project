@@ -111,14 +111,13 @@ export interface CompanyIncomeStatement {
     symbol: string;
     reportedCurrency: string;
     cik: string;
-    fillingDate: string;
+    filingDate: string;
     acceptedDate: string;
-    calendarYear: string;
+    fiscalYear: string;
     period: string;
     revenue: number;
     costOfRevenue: number;
     grossProfit: number;
-    grossProfitRatio: number;
     researchAndDevelopmentExpenses: number;
     generalAndAdministrativeExpenses: number;
     sellingAndMarketingExpenses: number;
@@ -126,25 +125,27 @@ export interface CompanyIncomeStatement {
     otherExpenses: number;
     operatingExpenses: number;
     costAndExpenses: number;
+    netInterestIncome: number;
     interestIncome: number;
     interestExpense: number;
     depreciationAndAmortization: number;
     ebitda: number;
-    ebitdaratio: number;
+    ebit: number;
+    nonOperatingIncomeExcludingInterest: number;
     operatingIncome: number;
-    operatingIncomeRatio: number;
     totalOtherIncomeExpensesNet: number;
     incomeBeforeTax: number;
-    incomeBeforeTaxRatio: number;
     incomeTaxExpense: number;
+    netIncomeFromContinuingOperations: number;
+    netIncomeFromDiscontinuedOperations: number;
+    otherAdjustmentsToNetIncome: number;
     netIncome: number;
-    netIncomeRatio: number;
+    netIncomeDeductions: number;
+    bottomLineNetIncome: number;
     eps: number;
-    epsdiluted: number;
+    epsDiluted: number;
     weightedAverageShsOut: number;
     weightedAverageShsOutDil: number;
-    link: string;
-    finalLink: string;
 }
 
 export interface CompanyBalanceSheet {
