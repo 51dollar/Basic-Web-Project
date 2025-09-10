@@ -1,5 +1,5 @@
 import type {CompanyKeyMetrics} from "../../company";
-import {useOutletContext} from "react-router";
+import {useOutletContext} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {getKeyMetrics} from "../../api.tsx";
 import RatioList from "../RatioList/RatioList.tsx";

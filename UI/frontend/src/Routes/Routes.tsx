@@ -5,6 +5,7 @@ import SearchPage from "../Pages/SearchPage/SearchPage";
 import CompanyPage from "../Pages/CompanyPage/CompanyPage";
 import IncomeStatement from "../Components/IncomeStatement/IncomeStatement.tsx";
 import DesignGuide from "../Pages/DesignGuide/DesignGuide.tsx";
+import BalanceSheet from "../Components/BalanceSheet/BalanceSheet.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
                     {
                         path: "income-statement",
                         element: <IncomeStatement />
+                    },
+                    {
+                        path: "balance-sheet",
+                        element: <BalanceSheet />
                     },
                 ]
             },

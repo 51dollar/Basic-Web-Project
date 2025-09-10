@@ -1,5 +1,5 @@
 import type {CompanyIncomeStatement} from "../../company";
-import {useOutletContext} from "react-router";
+import {useOutletContext} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {getIncomeStatement} from "../../api.tsx";
 import Table from "../Table/Table.tsx";
