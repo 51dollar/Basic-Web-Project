@@ -3,6 +3,7 @@ import {useOutletContext} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {getCashFlowStatement} from "../../api.tsx";
 import Table from "../Table/Table.tsx";
+import Spinner from "../Spinner/Spinner.tsx";
 
 const config = [
     {
@@ -57,7 +58,7 @@ const CashFlowStatement = () => {
                     data={cashFlowData}
                 />
             ) : (
-                <h1>No results!</h1>
+                <Spinner />
             )}
         </>
     );

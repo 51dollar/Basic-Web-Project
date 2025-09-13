@@ -3,6 +3,7 @@ import {useOutletContext} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {getBalanceSheet} from "../../api.tsx";
 import RatioList from "../RatioList/RatioList.tsx";
+import Spinner from "../Spinner/Spinner.tsx";
 
 const config = [
     {
@@ -46,7 +47,7 @@ const BalanceSheet = () => {
         }
         getData();
     }, []);
-    
+
     return (
         <>
             {balanceSheet ? (
@@ -55,7 +56,7 @@ const BalanceSheet = () => {
                     data={balanceSheet}
                 />
             ) : (
-                <h1>Company not found!</h1>
+                <Spinner />
             )}
         </>
     );

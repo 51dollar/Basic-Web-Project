@@ -3,6 +3,7 @@ import {useOutletContext} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {getIncomeStatement} from "../../api.tsx";
 import Table from "../Table/Table.tsx";
+import Spinner from "../Spinner/Spinner.tsx";
 
 const configs = [
     {
@@ -69,9 +70,9 @@ const IncomeStatement = () => {
                     config={configs}
                     data={incomeStatement}
                 />
-            </>) : (<>
-                Loading...
-            </>)}
+            </>) : (
+                <Spinner />
+            )}
         </>
     );
 };

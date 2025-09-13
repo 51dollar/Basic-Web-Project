@@ -3,6 +3,7 @@ import {useOutletContext} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {getKeyMetrics} from "../../api.tsx";
 import RatioList from "../RatioList/RatioList.tsx";
+import Spinner from "../Spinner/Spinner.tsx";
 
 const tableConfig = [
     {
@@ -88,7 +89,7 @@ const CompanyProfile = () => {
                     />
                 </>
             ) : (
-                <h1>No data found</h1>
+                <Spinner />
             )}
         </>
     );

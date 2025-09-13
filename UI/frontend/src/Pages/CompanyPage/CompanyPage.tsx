@@ -5,6 +5,7 @@ import {getCompanyProfile} from "../../api.tsx";
 import Sidebar from "../../Components/Sidebar/Sidebar.tsx";
 import CompanyDashboard from "../../Components/CompanyDashboard/CompanyDashboard.tsx";
 import Tile from "../../Components/Tile/Tile.tsx";
+import Spinner from "../../Components/Spinner/Spinner.tsx";
 
 const CompanyPage = () => {
     let {ticker} = useParams();
@@ -47,7 +48,7 @@ const CompanyPage = () => {
                     </CompanyDashboard>
                 </div>
             ) : (
-                <div>Company Not Found!</div>
+                <Spinner />
             )}
         </>
     );
