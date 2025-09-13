@@ -43,7 +43,7 @@ export const getCompanyProfile = async (query: string) => {
 export const getKeyMetrics = async (query: string) => {
     try {
         const data = await axios.get<CompanyKeyMetrics[]>(
-            `https://https://financialmodelingprep.com/stable/key-metrics?symbol=${query}&apikey=${import.meta.env.VITE_API_KEY}`
+            `https://financialmodelingprep.com/stable/key-metrics?symbol=${query}&apikey=${import.meta.env.VITE_API_KEY}`
         )
         return data;
     } catch (error: any) {
@@ -55,7 +55,7 @@ export const getKeyMetrics = async (query: string) => {
 export const getIncomeStatement = async (query: string) => {
     try {
         const data = await axios.get<CompanyIncomeStatement[]>(
-            `https://https://financialmodelingprep.com/stable/income-statement?=${query}&apikey=${import.meta.env.VITE_API_KEY}`
+            `https://financialmodelingprep.com/stable/income-statement?symbol=${query}&apikey=${import.meta.env.VITE_API_KEY}`
         )
         return data;
     } catch (error: any) {
@@ -67,7 +67,7 @@ export const getIncomeStatement = async (query: string) => {
 export const getBalanceSheet = async (query: string) => {
     try {
         const data = await axios.get<CompanyBalanceSheet[]>(
-            `https://https://financialmodelingprep.com/stable/balance-sheet-statement?=${query}&apikey=${import.meta.env.VITE_API_KEY}`
+            `https://financialmodelingprep.com/stable/balance-sheet-statement?symbol=${query}&apikey=${import.meta.env.VITE_API_KEY}`
         )
         return data;
     } catch (error: any) {

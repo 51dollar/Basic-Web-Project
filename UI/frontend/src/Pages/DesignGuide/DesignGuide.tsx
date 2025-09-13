@@ -1,6 +1,6 @@
-import Table from "../../Components/Table/Table.tsx";
-import RatioList from "../../Components/RatioList/RatioList.tsx";
-import {TestDataCompany, testIncomeStatementData} from "../../Components/Table/testData.tsx";
+import Table from "../../Components/Table/Table";
+import RatioList from "../../Components/RatioList/RatioList";
+import {TestDataCompany} from "../../Components/Table/testData";
 
 const data = TestDataCompany;
 
@@ -13,7 +13,7 @@ const tableConfig = [
 
 const DesignGuide = () => {
     return (
-        <div className="flex flex-col items-center justify-center text-center p-4">
+        <>
             <h1>
                 Design guide- This is the design guide for Fin Shark. These are reuable
                 components of the app with brief instructions on how to use them.
@@ -23,14 +23,14 @@ const DesignGuide = () => {
                 data={data}
             />
             <Table
-                data={testIncomeStatementData}
                 config={tableConfig}
+                data={data}
             />
             <h3>
                 Table - Table takes in a configuration object and company data as
                 params. Use the config to style your table.
             </h3>
-        </div>
+        </>
     );
 };
 
