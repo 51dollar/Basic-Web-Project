@@ -7,6 +7,7 @@ import IncomeStatement from "../Components/IncomeStatement/IncomeStatement.tsx";
 import DesignGuide from "../Pages/DesignGuide/DesignGuide.tsx";
 import BalanceSheet from "../Components/BalanceSheet/BalanceSheet.tsx";
 import CompanyProfile from "../Components/CompanyProfile/CompanyProfile.tsx";
+import CashFlowStatement from "../Components/CashFlowStatement/CashFlowStatement.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
                     {
                         path: "balance-sheet",
                         element: <BalanceSheet />
+                    },
+                    {
+                        path: "cash-flow-statement",
+                        element: <CashFlowStatement />
                     },
                 ]
             },

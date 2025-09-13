@@ -45,67 +45,6 @@ export interface CompanyProfile {
     isFund: boolean;
 }
 
-export interface CompanyKeyRatios {
-    dividendYielTTM: number;
-    dividendYielPercentageTTM: number;
-    peRatioTTM: number;
-    pegRatioTTM: number;
-    payoutRatioTTM: number;
-    currentRatioTTM: number;
-    quickRatioTTM: number;
-    cashRatioTTM: number;
-    daysOfSalesOutstandingTTM: number;
-    daysOfInventoryOutstandingTTM: number;
-    operatingCycleTTM: number;
-    daysOfPayablesOutstandingTTM: number;
-    cashConversionCycleTTM: number;
-    grossProfitMarginTTM: number;
-    operatingProfitMarginTTM: number;
-    pretaxProfitMarginTTM: number;
-    netProfitMarginTTM: number;
-    effectiveTaxRateTTM: number;
-    returnOnAssetsTTM: number;
-    returnOnEquityTTM: number;
-    returnOnCapitalEmployedTTM: number;
-    netIncomePerEBTTTM: number;
-    ebtPerEbitTTM: number;
-    ebitPerRevenueTTM: number;
-    debtRatioTTM: number;
-    debtEquityRatioTTM: number;
-    longTermDebtToCapitalizationTTM: number;
-    totalDebtToCapitalizationTTM: number;
-    interestCoverageTTM: number;
-    cashFlowToDebtRatioTTM: number;
-    companyEquityMultiplierTTM: number;
-    receivablesTurnoverTTM: number;
-    payablesTurnoverTTM: number;
-    inventoryTurnoverTTM: number;
-    fixedAssetTurnoverTTM: number;
-    assetTurnoverTTM: number;
-    operatingCashFlowPerShareTTM: number;
-    freeCashFlowPerShareTTM: number;
-    cashPerShareTTM: number;
-    operatingCashFlowSalesRatioTTM: number;
-    freeCashFlowOperatingCashFlowRatioTTM: number;
-    cashFlowCoverageRatiosTTM: number;
-    shortTermCoverageRatiosTTM: number;
-    capitalExpenditureCoverageRatioTTM: number;
-    dividendPaidAndCapexCoverageRatioTTM: number;
-    priceBookValueRatioTTM: number;
-    priceToBookRatioTTM: number;
-    priceToSalesRatioTTM: number;
-    priceEarningsRatioTTM: number;
-    priceToFreeCashFlowsRatioTTM: number;
-    priceToOperatingCashFlowsRatioTTM: number;
-    priceCashFlowRatioTTM: number;
-    priceEarningsToGrowthRatioTTM: number;
-    priceSalesRatioTTM: number;
-    dividendYieldTTM: number;
-    enterpriseValueMultipleTTM: number;
-    priceFairValueTTM: number;
-    dividendPerShareTTM: number;
-}
-
 export interface CompanyIncomeStatement {
     date: string;
     symbol: string;
@@ -217,9 +156,9 @@ export interface CompanyCashFlow {
     symbol: string;
     reportedCurrency: string;
     cik: string;
-    fillingDate: string;
+    filingDate: string;
     acceptedDate: string;
-    calendarYear: string;
+    fiscalYear: string;
     period: string;
     netIncome: number;
     depreciationAndAmortization: number;
@@ -236,14 +175,21 @@ export interface CompanyCashFlow {
     acquisitionsNet: number;
     purchasesOfInvestments: number;
     salesMaturitiesOfInvestments: number;
-    otherInvestingActivites: number;
-    netCashUsedForInvestingActivites: number;
-    debtRepayment: number;
-    commonStockIssued: number;
+    otherInvestingActivities: number;
+    netCashProvidedByInvestingActivities: number;
+    netDebtIssuance: number;
+    longTermNetDebtIssuance: number;
+    shortTermNetDebtIssuance: number;
+    netStockIssuance: number;
+    netCommonStockIssuance: number;
+    commonStockIssuance: number;
     commonStockRepurchased: number;
-    dividendsPaid: number;
-    otherFinancingActivites: number;
-    netCashUsedProvidedByFinancingActivities: number;
+    netPreferredStockIssuance: number;
+    netDividendsPaid: number;
+    commonDividendsPaid: number;
+    preferredDividendsPaid: number;
+    otherFinancingActivities: number;
+    netCashProvidedByFinancingActivities: number;
     effectOfForexChangesOnCash: number;
     netChangeInCash: number;
     cashAtEndOfPeriod: number;
@@ -251,8 +197,8 @@ export interface CompanyCashFlow {
     operatingCashFlow: number;
     capitalExpenditure: number;
     freeCashFlow: number;
-    link: string;
-    finalLink: string;
+    incomeTaxesPaid: number;
+    interestPaid: number;
 }
 
 export interface CompanyKeyMetrics {
