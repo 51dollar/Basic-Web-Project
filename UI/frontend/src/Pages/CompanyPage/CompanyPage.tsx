@@ -6,6 +6,7 @@ import Sidebar from "../../Components/Sidebar/Sidebar.tsx";
 import CompanyDashboard from "../../Components/CompanyDashboard/CompanyDashboard.tsx";
 import Tile from "../../Components/Tile/Tile.tsx";
 import Spinner from "../../Components/Spinner/Spinner.tsx";
+import CompFinder from "../../Components/CompFinder/CompFinder.tsx";
 
 const CompanyPage = () => {
     let {ticker} = useParams();
@@ -42,6 +43,7 @@ const CompanyPage = () => {
                             title="Sector"
                             subTitle={company.sector}
                         />
+                        <CompFinder ticker={company.symbol} />
                         <p className="bg-white shadow rounded text-medium text-gray-900 p-3 mt-1 m4">
                             {company.description}
                         </p>

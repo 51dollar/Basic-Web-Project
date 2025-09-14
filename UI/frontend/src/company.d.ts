@@ -250,3 +250,10 @@ export interface CompanyKeyMetrics {
     tangibleAssetValue: number;
     netCurrentAssetValue: number;
 }
+
+export interface CompanyCompData {
+    symbol: string;
+    companyName: string;
+    price: number;
+    mktCap: number;
+}
