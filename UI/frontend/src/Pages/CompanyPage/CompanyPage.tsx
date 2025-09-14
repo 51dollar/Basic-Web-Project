@@ -7,6 +7,7 @@ import CompanyDashboard from "../../Components/CompanyDashboard/CompanyDashboard
 import Tile from "../../Components/Tile/Tile.tsx";
 import Spinner from "../../Components/Spinner/Spinner.tsx";
 import CompFinder from "../../Components/CompFinder/CompFinder.tsx";
+import {formatLargeMonetaryNumber} from "../../Helpers/NumberFormatting.tsx";
 
 const CompanyPage = () => {
     let {ticker} = useParams();
@@ -33,11 +34,11 @@ const CompanyPage = () => {
                         />
                         <Tile
                             title="Price"
-                            subTitle={company.price.toString()}
+                            subTitle={"$" + company.price.toString()}
                         />
                         <Tile
                             title="Market Cap"
-                            subTitle={company.marketCap.toString()}
+                            subTitle={formatLargeMonetaryNumber(company.marketCap)}
                         />
                         <Tile
                             title="Sector"

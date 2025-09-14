@@ -4,35 +4,32 @@ import {useEffect, useState} from "react";
 import {getBalanceSheet} from "../../api.tsx";
 import RatioList from "../RatioList/RatioList.tsx";
 import Spinner from "../Spinner/Spinner.tsx";
+import {formatLargeMonetaryNumber} from "../../Helpers/NumberFormatting.tsx";
 
 const config = [
     {
         label: "Cash",
-        render: (company: CompanyBalanceSheet) => company.cashAndCashEquivalents,
+        render: (company: CompanyBalanceSheet) => formatLargeMonetaryNumber(company.cashAndCashEquivalents),
     },
     {
         label: "Inventory",
-        render: (company: CompanyBalanceSheet) => company.inventory,
+        render: (company: CompanyBalanceSheet) => formatLargeMonetaryNumber(company.inventory),
     },
     {
         label: "Other Current Assets",
-        render: (company: CompanyBalanceSheet) => company.otherCurrentAssets,
-    },
-    {
-        label: "Minority Interest",
-        render: (company: CompanyBalanceSheet) => company.minorityInterest,
+        render: (company: CompanyBalanceSheet) => formatLargeMonetaryNumber(company.otherCurrentAssets),
     },
     {
         label: "Other Non-Current Assets",
-        render: (company: CompanyBalanceSheet) => company.otherNonCurrentAssets,
+        render: (company: CompanyBalanceSheet) => formatLargeMonetaryNumber(company.otherNonCurrentAssets),
     },
     {
         label: "Long Term Debt",
-        render: (company: CompanyBalanceSheet) => company.longTermDebt,
+        render: (company: CompanyBalanceSheet) => formatLargeMonetaryNumber(company.longTermDebt),
     },
     {
         label: "Total Debt",
-        render: (company: CompanyBalanceSheet) => company.totalDebt,
+        render: (company: CompanyBalanceSheet) => formatLargeMonetaryNumber(company.totalDebt),
     },
 ];
 

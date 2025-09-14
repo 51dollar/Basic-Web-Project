@@ -1,4 +1,5 @@
 import {Link} from "react-router-dom";
+import {formatLargeMonetaryNumber} from "../../../Helpers/NumberFormatting.tsx";
 
 type Props = {
     ticker: string;
@@ -18,8 +19,8 @@ const CompFinderItem = ({ticker, companyName, price, mktCap}: Props) => {
             >
                 <span>{ticker}</span>
                 <span>Company: {companyName}</span>
-                <span>Price: {price}</span>
-                <span>Market Cap: {mktCap}</span>
+                <span>Price: {formatLargeMonetaryNumber(price)}</span>
+                <span>Market Cap: {formatLargeMonetaryNumber(mktCap)}</span>
             </Link>
         </div>
     );

@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import {getIncomeStatement} from "../../api.tsx";
 import Table from "../Table/Table.tsx";
 import Spinner from "../Spinner/Spinner.tsx";
+import {formatLargeMonetaryNumber, formatRatio} from "../../Helpers/NumberFormatting.tsx";
 
 const configs = [
     {
@@ -12,44 +13,43 @@ const configs = [
     },
     {
         label: "Revenue",
-        render: (company: CompanyIncomeStatement) => company.revenue,
+        render: (company: CompanyIncomeStatement) => formatLargeMonetaryNumber(company.revenue),
     },
     {
         label: "Cost Of Revenue",
-        render: (company: CompanyIncomeStatement) => company.costOfRevenue,
+        render: (company: CompanyIncomeStatement) => formatLargeMonetaryNumber(company.costOfRevenue),
     },
     {
         label: "Depreciation",
-        render: (company: CompanyIncomeStatement) =>
-            company.depreciationAndAmortization,
+        render: (company: CompanyIncomeStatement) => formatLargeMonetaryNumber(company.depreciationAndAmortization),
     },
     {
         label: "Operating Income",
-        render: (company: CompanyIncomeStatement) => company.operatingIncome,
+        render: (company: CompanyIncomeStatement) => formatLargeMonetaryNumber(company.operatingIncome),
     },
     {
         label: "Income Before Taxes",
-        render: (company: CompanyIncomeStatement) => company.incomeBeforeTax,
+        render: (company: CompanyIncomeStatement) => formatLargeMonetaryNumber(company.incomeBeforeTax),
     },
     {
         label: "Net Income",
-        render: (company: CompanyIncomeStatement) => company.netIncome,
+        render: (company: CompanyIncomeStatement) => formatLargeMonetaryNumber(company.netIncome),
     },
     {
         label: "Earnings Per Share",
-        render: (company: CompanyIncomeStatement) => company.eps,
+        render: (company: CompanyIncomeStatement) => formatRatio(company.eps),
     },
     {
         label: "Earnings Per Diluted",
-        render: (company: CompanyIncomeStatement) => company.epsDiluted,
+        render: (company: CompanyIncomeStatement) => formatRatio(company.epsDiluted),
     },
     {
         label: "Weighted Average Shares Outstanding",
-        render: (company: CompanyIncomeStatement) => company.weightedAverageShsOut,
+        render: (company: CompanyIncomeStatement) => formatLargeMonetaryNumber(company.weightedAverageShsOut),
     },
     {
         label: "Weighted Average Shares Outstanding Diluted",
-        render: (company: CompanyIncomeStatement) => company.weightedAverageShsOutDil,
+        render: (company: CompanyIncomeStatement) => formatLargeMonetaryNumber(company.weightedAverageShsOutDil),
     },
 ];
 
