@@ -3,13 +3,16 @@ import Navbar from "./Components/Navbar/Navbar.tsx";
 import {Outlet} from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import {ToastContainer} from "react-toastify";
+import {UserProvader} from "./Context/useAuth.tsx";
 
 function App() {
     return (
         <>
-            <Navbar />
-            <Outlet />
-            <ToastContainer />
+            <UserProvader>
+                <Navbar />
+                <Outlet />
+                <ToastContainer />
+            </UserProvader>
         </>
     );
 }
