@@ -10,6 +10,7 @@ import CompanyProfile from "../Components/CompanyProfile/CompanyProfile.tsx";
 import CashFlowStatement from "../Components/CashFlowStatement/CashFlowStatement.tsx";
 import LoginPage from "../Pages/LoginPage/LoginPage.tsx";
 import RegisterPage from "../Pages/RegisterPage/RegisterPage.tsx";
+import ProtectedRoute from "./ProtectedRoute.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -30,7 +31,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: "search",
-                element: <SearchPage />
+                element: (
+                    <ProtectedRoute>
+                        <SearchPage />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: "design-guide",
@@ -38,7 +43,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: "company/:ticker",
-                element: <CompanyPage />,
+                element: (
+                    <ProtectedRoute>
+                        <CompanyPage />
+                    </ProtectedRoute>
+                ),
                 children: [
                     {
                         path: "company-profile",
