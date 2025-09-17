@@ -5,6 +5,7 @@ import {getKeyMetrics} from "../../api.tsx";
 import RatioList from "../RatioList/RatioList.tsx";
 import Spinner from "../Spinner/Spinner.tsx";
 import {formatLargeNonMonetaryNumber, formatRatio} from "../../Helpers/NumberFormatting.tsx";
+import StockComment from "../StockComment/StockComment.tsx";
 
 const tableConfig = [
     {
@@ -88,6 +89,7 @@ const CompanyProfile = () => {
                         config={tableConfig}
                         data={companyData}
                     />
+                    <StockComment stockSymbol={ticker} />
                 </>
             ) : (
                 <Spinner />
