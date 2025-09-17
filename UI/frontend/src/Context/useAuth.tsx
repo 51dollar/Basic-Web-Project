@@ -8,7 +8,7 @@ import axios from "axios";
 type UserContextType = {
     user: UserProfile | null;
     token: string | null;
-    registerUser: (email: string, username: string, password: string) => void;
+    registerUser: (username: string, email: string, password: string) => void;
     loginUser: (username: string, password: string) => void;
     logout: () => void;
     isLoggedIn: () => boolean;
@@ -20,7 +20,7 @@ type Props = {
 
 const UserContext = createContext<UserContextType>({} as UserContextType);
 
-export const UserProvader = ({children}: Props) => {
+export const UserProvider = ({children}: Props) => {
     const navigate = useNavigate();
     const [token, setToken] = useState<string | null>(null);
     const [user, setUser] = useState<UserProfile | null>(null);

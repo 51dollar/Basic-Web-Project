@@ -9,6 +9,7 @@ import BalanceSheet from "../Components/BalanceSheet/BalanceSheet.tsx";
 import CompanyProfile from "../Components/CompanyProfile/CompanyProfile.tsx";
 import CashFlowStatement from "../Components/CashFlowStatement/CashFlowStatement.tsx";
 import LoginPage from "../Pages/LoginPage/LoginPage.tsx";
+import RegisterPage from "../Pages/RegisterPage/RegisterPage.tsx";
 
 export const router = createBrowserRouter([
     {
@@ -22,6 +23,10 @@ export const router = createBrowserRouter([
             {
                 path: "login",
                 element: <LoginPage />
+            },
+            {
+                path: "register",
+                element: <RegisterPage />
             },
             {
                 path: "search",
